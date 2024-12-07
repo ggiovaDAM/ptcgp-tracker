@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="server_config_validate.xsd">
+    <dbtype>mysql</dbtype>
+    <dbname>ptcgp-tracker</dbname>
+    <host>127.0.0.1</host>
+    <port>3306</port>
+    <user>root</user>
+    <password></password>
+</server-config>
