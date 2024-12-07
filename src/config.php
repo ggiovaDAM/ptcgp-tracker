@@ -13,3 +13,5 @@
 
     // URLS
     define("ROOT_URL", "http://localhost/src/");
+
+    define("ERROR_URL", ROOT_URL . "/pages/error/error_page.php");
