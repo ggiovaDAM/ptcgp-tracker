@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/../../backend/php/functions.php";
+
 $result = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $result = 0;
 
+                startSession();
+
                 $_SESSION["LOGIN_ID"] = $db->lastInsertId();
                 $_SESSION["LOGIN_EMAIL"] = $email;
     
@@ -44,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         } catch (PDOException $e) {
-            if ($db->inTransaction()) $db->rollBack();
+            rollBackTransaction($db);
 
             die("Error catastrófico " . $e->getMessage());
         }

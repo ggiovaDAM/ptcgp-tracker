@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/../../backend/php/functions.php";
+
 $result = -1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = 1;
         } else {
             $result = 0;
+
+            startSession();
 
             $_SESSION["LOGIN_ID"] = $userInfo["userID"];
             $_SESSION["LOGIN_EMAIL"] = $email;
